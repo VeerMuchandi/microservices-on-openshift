@@ -13,6 +13,6 @@ oc create configmap twitter-props \
  --from-literal=TWITTER_OAUTH_ACCESS_TOKEN=$TWITTER_OAUTH_ACCESS_TOKEN \
  --from-literal=TWITTER_OAUTH_ACCESS_TOKEN_SECRET=$TWITTER_OAUTH_ACCESS_TOKEN_SECRET
 
-oc env dc/twitter-api --from=configmap/twitter-props
+oc set env dc/twitter-api --from=configmap/twitter-props
 
 oc expose svc/twitter-api
